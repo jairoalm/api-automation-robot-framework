@@ -2,7 +2,7 @@
 *** Settings ***
 Documentation    Configurações globais do projeto
 Library          RequestsLibrary
-Resource        ../services/ms-usuarios/usuarios.robot
+Resource        ../services/ms-usuarios/ms-usuarios.robot
 
 
 #Sessão para criação dos cenários de teste

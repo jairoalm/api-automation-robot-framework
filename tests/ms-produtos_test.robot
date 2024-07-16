@@ -4,13 +4,14 @@ Documentation    Configurações globais do projeto
 Library          RequestsLibrary
 Resource        ../services/ms-usuarios/ms-usuarios.robot
 Resource        ../services/ms-login/ms-login.robot
+Resource        ../services/ms-produtos/ms-produtos.robot
 
 
 #Sessão para criação dos cenários de teste
 *** Test Cases ***
 
-Cenario: POST Realizar Login 200
-    [tags]    POSTLOGIN
+Cenario: POST Criar Produto 201
+    [tags]    POSTPRODUTO
     Criar Sessao
-    POST Endpoint /login
-    Validar Status Code "200"
+    POST Endpoint /produtos
+    Validar Status Code "201"

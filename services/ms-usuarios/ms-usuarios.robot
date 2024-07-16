@@ -14,7 +14,8 @@ Resource    ../../suporte/factory/dynamic.robot
 #Sessão para criação de Keywords Personalizadas
 *** Keywords ***
 Criar Sessao
-    Create Session        serverest    https://serverest.dev
+    # Create Session        serverest    https://serverest.dev
+    Create Session        serverest    http://localhost:3000
 
 GET Endpoint /usuarios
     ${response}            GET On Session    serverest    /usuarios
