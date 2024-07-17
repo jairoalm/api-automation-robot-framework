@@ -3,6 +3,7 @@
 Documentation    Configurações globais do projeto
 Library          RequestsLibrary
 Resource        ../services/ms-usuarios/ms-usuarios.robot
+Resource        ../suporte/common/common_keywords.robot
 
 
 #Sessão para criação dos cenários de teste
@@ -33,4 +34,9 @@ Cenario: DELETE Deletar Usuario 200
     [tags]    DELETE
     Criar Sessao
     DELETE Endpoint /usuarios
-    Validar Status Code "200" 
+    Validar Status Code "200"
+
+Cenario: POST Criar Usuario De Massa Estatica 201
+     Criar Sessao
+     Criar Usuario Estatico Valido
+     Validar Status Code "201"

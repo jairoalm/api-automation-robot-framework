@@ -4,6 +4,7 @@ Documentation    Configurações globais do projeto
 Library          RequestsLibrary
 Resource        ../services/ms-usuarios/ms-usuarios.robot
 Resource        ../services/ms-login/ms-login.robot
+Resource        ../suporte/common/common_keywords.robot
 
 
 #Sessão para criação dos cenários de teste

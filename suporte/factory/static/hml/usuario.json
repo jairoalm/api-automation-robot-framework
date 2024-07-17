@@ -1,0 +1,39 @@
+{
+    "user_valido":{
+        "nome": "James Bond",
+        "email": "jamesman@gmai.com",
+        "password": "teste",
+        "administrador": "true"
+    },
+    "user_invalido":{
+        "nome": "Invalid tester",
+        "email": "jamesman@gmai.com",
+        "password": "teste",
+        "administrador": "true"
+    },
+    "user_sem_nome":{
+        "nome": "",
+        "email": "jamesman@gmai.com",
+        "password": "teste",
+        "administrador": "true"
+    },
+    "user_sem_email":{
+        "nome": "James Bond",
+        "email": "",
+        "password": "teste",
+        "administrador": "true"
+    },
+    "user_sem_senha":{
+        "nome": "James Bond",
+        "email": "jamesman@gmai.com",
+        "password": "",
+        "administrador": "true"
+    },
+    "user_sem_administrador":{
+        "nome": "James Bond",
+        "email": "jamesman@gmai.com",
+        "password": "teste",
+        "administrador": ""
+    }
+    
+}

@@ -4,6 +4,7 @@ Documentation    Arquivo simples para requisições HTTP em APIs REST
 Library        FakerLibrary
 Resource    ../../suporte/base.robot
 Resource    ../../suporte/factory/dynamic.robot
+Resource    ../../suporte/common/common_keywords.robot
 
 #Sessão para criação de variáveis para utilização
 *** Variables ***
@@ -35,6 +36,11 @@ POST Endpoint /usuarios
     Log To Console    Response: ${response.content}
     Set Global Variable    ${response}
 
+Criar Usuario Estatico Valido
+    ${json}                Importar JSON Estatico        /suporte/factoty/static/hml/usuario.json
+    ${payload}             Set Variable        ${json["user_valido"]}
+    Set Global Variable    ${payload}            
+
 PUT Endpoint /usuarios  
     ${nome}=    FakerLibrary.First Name
     ${email}=    FakerLibrary.Email
@@ -48,9 +54,6 @@ DELETE Endpoint /usuarios
     ${response}        DELETE On Session        serverest    /usuarios/${response.json()["_id"]}
     Log To Console    Response: ${response.content}
     Set Global Variable    ${response}
-
-Validar Status Code "${statuscode}"
-    Should Be True    ${response.status_code} == ${statuscode}
 
 Validar Objetos do Response
     Should Contain   ${response.json()}.usuarios    quantidade

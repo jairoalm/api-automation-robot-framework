@@ -1,0 +1,18 @@
+{
+    "user_cadastrado":{
+        "email":"virginiadunn@example.com",
+        "password":"A%z5DOcoI1"
+    },
+    "user_invalido":{
+        "email":"vr@example.com",
+        "password":"A%z5DOcoI1"
+    },
+    "user_sem_email":{
+        "email":"",
+        "password":"A%z5DOcoI1"
+    },
+    "user_sem_senha":{
+        "email":"virginiadunn@example.com",
+        "password":""
+    }
+}
