@@ -1,9 +1,7 @@
 #Sessão para configuração, documentação, imports de arquivos e library
 *** Settings ***
 Documentation    Variaveis e ação de login
-Library        FakerLibrary
-Resource    ../../suporte/base.robot
-Resource    ../../suporte/factory/dynamic.robot
+Resource    ../../support/base.robot
 Resource    ../../tests/ms-login_test.robot
 
 #Sessão para criação de variáveis para utilização

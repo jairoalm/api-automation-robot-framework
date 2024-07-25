@@ -1,8 +1,7 @@
 #Sessão para configuração, documentação, imports de arquivos e library
 *** Settings ***
 Documentation    Arquivo simples para requisições HTTP em APIs REST
-Library          RequestsLibrary
-Resource    ../../suporte/base.robot
+Resource    ../../support/base.robot
 
 #Sessão para criação de variáveis para utilização
 *** Variables ***

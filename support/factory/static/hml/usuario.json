@@ -1,13 +1,13 @@
 {
     "user_valido":{
-        "nome": "James Bond",
-        "email": "jamesman@gmai.com",
+        "nome": "James445 Bond1",
+        "email": "jamesm555@gmai.com",
         "password": "teste",
         "administrador": "true"
     },
-    "user_invalido":{
-        "nome": "Invalid tester",
-        "email": "jamesman@gmai.com",
+    "user_cadastrado":{
+        "nome": "James3 Bond",
+        "email": "jamesman3@gmai.com",
         "password": "teste",
         "administrador": "true"
     },
