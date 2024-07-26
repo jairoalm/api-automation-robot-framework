@@ -12,9 +12,12 @@ Criar Dados Do Usuario
     Log To Console                     ${payload}
     Set Global Variable                ${payload}
 
-# Generate Valid Product Data
-#     # ${first_name}           FakerLibrary.Firstname
-#     # ${email}            FakerLibrary.Email
-#     # ${password}             FakerLibrary.Password
-#     # ${user_data}            Create Dictionary    nome=${first_name}    email=${email}    password=${password}    administrador=true    
-#     # RETURN                ${user_data}
+Criar Dados Do Produto
+    ${nome}                   FakerLibrary.Company
+    ${preco}                  FakerLibrary.Day Of Month
+    ${descricao}              FakerLibrary.Country
+    ${quantidade}             FakerLibrary.Day Of Month    
+    ${product_payload}              Create Dictionary    nome=${nome}    preco=${preco}    descricao=${descricao}    quantidade=${quantidade}    
+    Log To Console                     ${product_payload}
+    Set Global Variable                ${product_payload}
+    # RETURN                    ${product_payload}
