@@ -1,7 +1,7 @@
 {
     "user_valido":{
-        "nome": "James445 Bond1",
-        "email": "jamesm555@gmai.com",
+        "nome": "Luna Carolina Ribeiro",
+        "email": "lunacarolinaribeiro@righettorosa.com.br",
         "password": "teste",
         "administrador": "true"
     },
@@ -13,27 +13,26 @@
     },
     "user_sem_nome":{
         "nome": "",
-        "email": "jamesman@gmai.com",
+        "email": "beltrano@qa.com.br",
         "password": "teste",
         "administrador": "true"
     },
     "user_sem_email":{
-        "nome": "James Bond",
+        "nome": "James3 Bond",
         "email": "",
         "password": "teste",
         "administrador": "true"
     },
     "user_sem_senha":{
-        "nome": "James Bond",
-        "email": "jamesman@gmai.com",
+        "nome": "James3 Bond",
+        "email": "jamesman3@gmai.com",
         "password": "",
         "administrador": "true"
     },
     "user_sem_administrador":{
-        "nome": "James Bond",
-        "email": "jamesman@gmai.com",
+        "nome": "James3 Bond",
+        "email": "jamesman3@gmai.com",
         "password": "teste",
         "administrador": ""
-    }
-    
+    }    
 }

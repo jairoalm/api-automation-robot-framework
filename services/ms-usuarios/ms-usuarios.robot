@@ -18,12 +18,6 @@ POST Endpoint /usuarios
     Log To Console    Response: ${response.content}
     Set Global Variable    ${response}
 
-Pegar Dados Usuario Estatico Valido
-    ${json}                Importar JSON Estatico        usuario.json
-    ${payload}             Set Variable        ${json["user_cadastrado"]}
-    Set Global Variable    ${payload}
-    POST Endpoint /usuarios
-
 PUT Endpoint /usuarios  
     ${response}        PUT On Session        serverest    /usuarios/${response.json()["_id"]}        json=&{payload}
     Log To Console    Response: ${response.content}
@@ -33,3 +27,10 @@ DELETE Endpoint /usuarios
     ${response}        DELETE On Session        serverest    /usuarios/${response.json()["_id"]}
     Log To Console    Response: ${response.content}
     Set Global Variable    ${response}
+
+Pegar Dados Usuario Estatico Valido "${user_data}"
+    ${json}                Importar JSON Estatico        usuario.json
+    ${payload}             Set Variable        ${json["${user_data}"]}
+    Log To Console    Payload: ${payload}
+    Set Global Variable    ${payload}
+    # POST Endpoint /usuarios

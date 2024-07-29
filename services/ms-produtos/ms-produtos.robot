@@ -14,6 +14,8 @@ POST Endpoint /produtos
     ${response}        POST On Session        serverest    /produtos        json=&{product_payload}    headers=${header}
     Log To Console    Response: ${response.content}
     Set Global Variable    ${response}
+    ${id_produto}=     Get From Dictionary    ${response.json()}    _id
+    Set Global Variable    ${id_produto}
 
 DELETE Endpoint /produtos
     ${header}           Create Dictionary    Authorization=${token_auth}

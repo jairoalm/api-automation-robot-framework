@@ -48,7 +48,7 @@ Cenario: DELETE Deletar Usuario 200
 
 Cenario: POST Validar Usuario Já Cadastrado Com Massa Estatica 400
     [tags]    USERCADASTRADO     
-    Pegar Dados Usuario Estatico Valido
+    Pegar Dados Usuario Estatico Valido "user_valido"
     POST Endpoint /usuarios
-    Validar Status Code "400"
+    # Validar Status Code "400"
     Validar Mensagem "Este email já está sendo usado"

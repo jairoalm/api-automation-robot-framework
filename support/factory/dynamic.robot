@@ -21,3 +21,9 @@ Criar Dados Do Produto
     Log To Console                     ${product_payload}
     Set Global Variable                ${product_payload}
     # RETURN                    ${product_payload}
+
+Adicionar Produto No Carrinho
+    ${id_product}            Set Variable    ${id_produto}
+    ${carrinho}              Create Dictionary    idProduto=${id_product}    quantidade=1
+    Log To Console           ${carrinho}
+    Set Global Variable      ${carrinho}
