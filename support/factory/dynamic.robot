@@ -23,7 +23,11 @@ Criar Dados Do Produto
     # RETURN                    ${product_payload}
 
 Adicionar Produto No Carrinho
-    ${id_product}            Set Variable    ${id_produto}
-    ${carrinho}              Create Dictionary    idProduto=${id_product}    quantidade=1
-    Log To Console           ${carrinho}
-    Set Global Variable      ${carrinho}
+    ${id_product}            Set Variable    ${id_produto}    
+    ${product}               Create Dictionary    idProduto=${id_produto}    quantidade=3
+    # Criar uma lista e adicionar o produto à lista
+    @{products_list}         Create List    ${product}
+    # Criar o payload com a lista de produtos
+    ${payload}               Create Dictionary    produtos=@{products_list}
+    Log To Console           Payload= ${payload}
+    Set Global Variable      ${payload}

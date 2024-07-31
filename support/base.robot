@@ -5,6 +5,7 @@ Library          RequestsLibrary
 Library          Collections
 Library          OperatingSystem
 Library          FakerLibrary
+Library          JSONLibrary
 Resource         ../support/common/common_keywords.robot
 Resource         ./factory/dynamic.robot
 Resource         ./variaveis/serverest_variaveis.robot

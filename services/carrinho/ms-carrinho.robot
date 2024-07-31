@@ -7,15 +7,18 @@ Resource    ../../support/base.robot
 *** Keywords ***
 
 POST Endpoint /carrinhos
+    ${header}           Create Dictionary    Authorization=${token_auth}   
+    ${response}         POST On Session        serverest    /carrinhos    json=${payload}    headers=${header}
+    # Log To Console      Payload: ${payload}
+    Log To Console      Response: ${response.content}
+    ${id_carrinho}=     Get From Dictionary    ${response.json()}    _id
+    Set Global Variable    ${id_carrinho}
+    Set Global Variable    ${response}
+
+DELETE endpoint /carrinhos
     ${header}           Create Dictionary    Authorization=${token_auth}
-    ${product}          Create Dictionary    idProduto=1V15c17V9RimsiU6   quantidade=12
-    Log To Console    Product: ${product}
-    &{products_list}    Create List          ${product}
-    Log To Console    Product List: ${products_list}
-    ${payload}          Create Dictionary    produtos=${products_list} 
-    # ${response}         POST On Session        serverest    /carrinhos    json=&{carrinho}    headers=${header}
-    Log To Console    Payload: ${products_list}
-    ${response}         POST On Session        serverest    /carrinhos    data=${payload}    headers=${header}
-    Log To Console    Payload: ${payload}
+    Log To Console    ${header}   
+    ${response}         DELETE On Session        serverest    /carrinhos/cancelar-compra    headers=${header}
     Log To Console      Response: ${response.content}
     Set Global Variable    ${response}
+    
