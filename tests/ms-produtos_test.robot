@@ -58,4 +58,11 @@ Cenario: DELETE Excluir Produto 200
     DELETE Endpoint /produtos
     Validar Status Code "200"
     Validar Mensagem "Registro excluído com sucesso"
-    
+
+Cenario: Tentar criar um novo Produto com o campo Nome vazio
+    [Documentation]     Tentar criar um novo Produto com o campo "nome" preenchido incorretamente
+    [Tags]  regression   
+    Fazer Login e Armazenar Token
+    Fazer uma requisição POST na rota e campo "nome" com valor "vazio" no cadastro
+    Validar Status Code "400"
+    Validar Mensagem "nome não pode ficar em branco"

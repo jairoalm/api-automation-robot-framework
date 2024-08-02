@@ -17,14 +17,14 @@ Criar Dados Do Produto
     ${preco}                  FakerLibrary.Day Of Month
     ${descricao}              FakerLibrary.Country
     ${quantidade}             FakerLibrary.Day Of Month    
-    ${product_payload}              Create Dictionary    nome=${nome}    preco=${preco}    descricao=${descricao}    quantidade=${quantidade}    
-    Log To Console                     ${product_payload}
-    Set Global Variable                ${product_payload}
-    # RETURN                    ${product_payload}
+    ${product_payload}        Create Dictionary    nome=${nome}    preco=${preco}    descricao=${descricao}    quantidade=${quantidade}    
+    Log To Console            Produto= ${product_payload}
+    # Set Global Variable                ${product_payload}
+    RETURN                    ${product_payload}
 
 Adicionar Produto No Carrinho
     ${id_product}            Set Variable    ${id_produto}    
-    ${product}               Create Dictionary    idProduto=${id_produto}    quantidade=3
+    ${product}               Create Dictionary    idProduto=    quantidade=1
     # Criar uma lista e adicionar o produto à lista
     @{products_list}         Create List    ${product}
     # Criar o payload com a lista de produtos

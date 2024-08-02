@@ -20,5 +20,4 @@ DELETE endpoint /carrinhos
     Log To Console    ${header}   
     ${response}         DELETE On Session        serverest    /carrinhos/cancelar-compra    headers=${header}
     Log To Console      Response: ${response.content}
-    Set Global Variable    ${response}
-    
+    Set Global Variable    ${response} 

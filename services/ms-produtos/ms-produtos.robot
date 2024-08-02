@@ -9,12 +9,15 @@ Resource    ../../support/base.robot
 #Sessão para criação de Keywords Personalizadas
 *** Keywords ***
 
-POST Endpoint /produtos
+POST Endpoint /produtos    
+    # Criar o header com o token de autenticação
     ${header}           Create Dictionary    Authorization=${token_auth}
-    ${response}        POST On Session        serverest    /produtos        json=&{product_payload}    headers=${header}
-    Log To Console    Response: ${response.content}
+    # Enviar a requisição POST usando o payload como JSON
+    ${response}         POST On Session    serverest    /produtos        json=${product_payload}    headers=${header}
+    Log To Console      Response: ${response.content}
+    # Armazenar a resposta e o ID do produto
     Set Global Variable    ${response}
-    ${id_produto}=     Get From Dictionary    ${response.json()}    _id
+    ${id_produto}=      Get From Dictionary    ${response.json()}    _id
     Set Global Variable    ${id_produto}
 
 DELETE Endpoint /produtos
@@ -46,3 +49,13 @@ Validar Que Objetos Response Existem
 
 Validar Objetos Response Do Produto
     Should Not Be Empty        ${response.json()["produtos"]}
+
+Fazer uma requisição POST na rota e campo "${attribute}" com valor "${value}" no cadastro    
+    ${payload}    Criar Dados Do Produto
+    Run Keyword If    '${value}' == "vazio"     Set to Dictionary    ${payload}    ${attribute}=${EMPTY}
+    ...     ELSE       Set to Dictionary    ${payload}    ${attribute}=${value}
+    ${payload_json}=    Evaluate    json.dumps(${payload})
+    Set Global Variable    ${payload_json}
+    Log To Console    Valor vazio= ${payload_json}    
+    ${header}           Create Dictionary    Authorization=${token_auth}
+    ${response}        POST On Session        serverest    /produtos    json=${payload_json}    headers=${header}
